@@ -100,11 +100,12 @@ function STitle({ children, sub }: { children: React.ReactNode; sub?: string }) 
 function Btn({ children, onClick, href, outline, style: s }: { children: React.ReactNode; onClick?: () => void; href?: string; outline?: boolean; style?: React.CSSProperties }) {
   const base: React.CSSProperties = {
     display:"inline-flex", alignItems:"center", justifyContent:"center", gap:8, padding:"14px 32px",
-    borderRadius:50, fontSize:14, fontWeight:500, cursor:"pointer", border:"none", textDecoration:"none",
+    borderRadius:50, fontSize:14, fontWeight:500, cursor:"pointer", textDecoration:"none",
     transition:"all .3s ease", minWidth:160, fontFamily:sans, letterSpacing:.5,
-    ...(outline
-      ? { background:"transparent", color:C.gold, border:`1.5px solid ${C.gold}` }
-      : { background:C.gold, color:C.white, boxShadow:`0 4px 20px ${C.gold}33` }),
+    border: outline ? `1.5px solid ${C.gold}` : "none",
+    background: outline ? "transparent" : C.gold,
+    color: outline ? C.gold : C.white,
+    boxShadow: outline ? "none" : `0 4px 20px ${C.gold}33`,
     ...s,
   };
   if (href) return <a href={href} target="_blank" rel="noopener" style={base}>{children}</a>;
