@@ -98,19 +98,13 @@ function STitle({ children, sub }: { children: React.ReactNode; sub?: string }) 
 }
 
 function Btn({ children, onClick, href, outline, style: s }: { children: React.ReactNode; onClick?: () => void; href?: string; outline?: boolean; style?: React.CSSProperties }) {
-  const base: React.CSSProperties = {
-    display:"inline-flex", alignItems:"center", justifyContent:"center", gap:8, padding:"14px 32px",
-    borderRadius:50, fontSize:14, fontWeight:500, cursor:"pointer", textDecoration:"none",
-    transition:"all .3s ease", minWidth:160, fontFamily:sans, letterSpacing:.5,
-    border: outline ? `1.5px solid ${C.gold}` : "none",
-    background: outline ? "transparent" : C.gold,
-    color: outline ? C.gold : C.white,
-    boxShadow: outline ? "none" : `0 4px 20px ${C.gold}33`,
-    ...s,
-  };
+  const base: React.CSSProperties = outline
+    ? { display:"inline-flex", alignItems:"center", justifyContent:"center", gap:8, padding:"14px 32px", borderRadius:50, fontSize:14, fontWeight:500, cursor:"pointer", textDecoration:"none", transition:"all .3s ease", minWidth:160, fontFamily:sans, letterSpacing:.5, border:`1.5px solid ${C.gold}`, background:"transparent", color:C.gold, ...s }
+    : { display:"inline-flex", alignItems:"center", justifyContent:"center", gap:8, padding:"14px 32px", borderRadius:50, fontSize:14, fontWeight:500, cursor:"pointer", textDecoration:"none", transition:"all .3s ease", minWidth:160, fontFamily:sans, letterSpacing:.5, border:"none", background:C.gold, color:C.white, boxShadow:`0 4px 20px ${C.gold}33`, ...s };
   if (href) return <a href={href} target="_blank" rel="noopener" style={base}>{children}</a>;
   return <button onClick={onClick} style={base}>{children}</button>;
 }
+
 
 function Card({ children, style: s }: { children: React.ReactNode; style?: React.CSSProperties }) {
   return <div style={{ background:C.white, borderRadius:20, padding:"36px 28px", boxShadow:"0 2px 24px rgba(0,0,0,.04)", border:`1px solid ${C.goldFaint}`, ...s }}>{children}</div>;
