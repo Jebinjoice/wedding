@@ -225,7 +225,7 @@ export default function Home() {
         <Card>
           <div style={{ textAlign:"center" }}>
             <p style={{ fontFamily:serif, fontSize:"clamp(18px,4.5vw,22px)", color:C.gold, fontWeight:500, marginBottom:6 }}>Saturday, April 11, 2026</p>
-            <p style={{ fontSize:14, color:C.muted, marginBottom:20 }}>At 10:00 in the Morning</p>
+            <p style={{ fontSize:14, color:C.muted, marginBottom:20 }}>At 6:00 PM in the Evening</p>
             <div style={{ width:40, height:1, background:C.goldLight, margin:"0 auto 20px", opacity:.5 }} />
             <p style={{ fontFamily:serif, fontSize:"clamp(17px,4vw,20px)", color:C.text, fontWeight:500, marginBottom:6 }}>St. Michael&apos;s Church</p>
             <p style={{ fontSize:14, color:C.muted, marginBottom:24 }}>Chembumukku, Kochi</p>
